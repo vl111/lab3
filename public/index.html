@@ -66,8 +66,13 @@
           // var li = document.createElement("li");
           // li.appendChild(document.createTextNode(message.name + ": " + message.message));
           // ul.appendChild(li)
-          
-          var str = `<li> <b>${message.name}</b>: ${message.message}</li>`
+          var str;
+          if(message.message.includes("http")){
+               str = `<li> <b>${message.name}</b>: <a href="${message.message}">${message.message}</a></li>`
+               str = `<alt>img/numbers-01.jpg</alt>`;
+             } else{
+               str = `<li> <b>${message.name}</b>: ${message.message}</li>`
+             }
 
           document.getElementById('messagesList').innerHTML = document.getElementById('messagesList').innerHTML + str;
         }
