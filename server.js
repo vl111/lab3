@@ -4,7 +4,19 @@ let io = require('socket.io')(http);
 
 var url = require('url');
 
-var messages = [];
+//webpack
+import '.public/style.css';
+import _ from 'lodash';
+console.log(_.isEqual(1, 2));
+var obj = {
+    field: 111,
+    someFn() {
+        console.log('someFn');
+    }
+};
+obj.someFn();
+
+var messages = []; 
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html')
