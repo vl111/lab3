@@ -65,20 +65,11 @@
           // var ul = document.getElementById("messagesList");
           // var li = document.createElement("li");
           // li.appendChild(document.createTextNode(message.name + ": " + message.message));
-          // ul.appendChild(li)  
-           
-          message.map(function(m) {
-            return m.name;
-          });
+          // ul.appendChild(li)
           
-          var messages = [];
-          messages.push(message);
-          const html = messages
-           .reverse()
-           .map((m) => `<li> <b>${m.name}</b>: ${m.message}</li>`)
-           .join('');
+          var str = `<li> <b>${message.name}</b>: ${message.message}</li>`
 
-          document.getElementById('messagesList').innerHTML = document.getElementById('messagesList').innerHTML + html;
+          document.getElementById('messagesList').innerHTML = document.getElementById('messagesList').innerHTML + str;
         }
         
         // document.querySelector('.send')
