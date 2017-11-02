@@ -13,9 +13,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "nodemon": "*",
-    "socket.io": "*",
-    "style-loader": "*",
-    "css-loader": "*"
+    "socket.io": "*"
   },
   "engines": {
     "node": "8.x"
