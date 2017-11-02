@@ -1,0 +1,39 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Chat!</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="sendMessage()">Send</button>
+      <script src = "/socket.io/socket.io.js"></script>
+      <script>
+        //<button type = "button" class = "btn btn-success btn-lg btn-block send">Send</button>
+        //src = "/public/client.js"
+        var socket = io('https://lab3socket.glitch.me');
+        
+        // function sendMessage(){
+        //   socket.emit('send message','MESSAGE TEXT');
+        //   console.log('Message sended')
+        // }
+        
+        document.querySelector('.send')
+          .addEventListener(
+          'click', ev => {
+          ev.preventDefault();
+          console.log('Message sended');
+          socket.emit('send message','MESSAGE TEXT');
+          });
+      </script>
+    </div>
+  </body>
+</html>
