@@ -12,6 +12,10 @@
       <input type="text" id="message" size = "100%"/>
       <button onclick = "sendMessage()">Send</button>
       
+       <ul id="messagesList" size = "101%">
+       </ul>
+      
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
       <script src = "/socket.io/socket.io.js"></script>
       <script>
         //<button type = "button" class = "btn btn-success btn-lg btn-block send">Send</button>
@@ -20,9 +24,25 @@
         function sendMessage(){
           var mes = {name: document.getElementById("name").value,  message: document.getElementById("message").value};
           if(mes.name !== "" && mes.message !== ""){
-            socket.emit('send message', mes);
+            socket.emit('send message',mes);
             console.log('Message sended')
           }
+        }
+        
+        socket.on('server message', function(data){
+          adder(data);
+          console.log(data);
+        });
+        
+        function adder(message) {
+          // var ul = document.getElementById("messagesList");
+          // var li = document.createElement("li");
+          // li.appendChild(document.createTextNode(message.name + ": " + message.message));
+          // ul.appendChild(li)
+          $(document).ready(function () {
+            $("#ul").append($("<li>").text("Some Text."));
+          });
+          
         }
         
         // document.querySelector('.send')

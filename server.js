@@ -7,7 +7,7 @@ var url = require('url');
 var messages = [];
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/views/index.html')
+  res.sendFile(__dirname + '/public/index.html')
   //res.send("HI");
 });
 
@@ -28,6 +28,7 @@ io.on('connection', function(socket){
   
   socket.on('send message', function(data){
     messages.push(data);
+    io.emit('server message', data);
     console.log(data);
   });
 });
