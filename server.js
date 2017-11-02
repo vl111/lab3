@@ -4,6 +4,8 @@ let io = require('socket.io')(http);
 
 var url = require('url');
 
+var messages = [];
+
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/views/index.html')
   //res.send("HI");
@@ -14,13 +16,18 @@ http.listen(process.env.PORT, function () {
 });
 
 io.on('connection', function(socket){
-  console.log("connected to new client");
+  console.log("CONNECTED to new client");
+  for(var i = 0; i < messages.length; i++){
+    io.emit('server message', messages[i]);
+    console.log(messages[i]);
+  }
   
   socket.on('disconnect', function(data){
     console.log("DISCONECTED");
   });
   
   socket.on('send message', function(data){
+    messages.push(data);
     console.log(data);
   });
 });

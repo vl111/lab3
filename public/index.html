@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="https://glitch.com/edit/#!/lab3socket?path=public/style.css">
+  </head>
+  <body>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" size = "30%"/>
+      <label for="message">Message:</label>
+      <input type="text" id="message" size = "100%"/>
+      <button onclick = "sendMessage()">Send</button>
+      
+      <script src = "/socket.io/socket.io.js"></script>
+      <script>
+        //<button type = "button" class = "btn btn-success btn-lg btn-block send">Send</button>
+        var socket = io(document.URL);
+        
+        function sendMessage(){
+          var mes = {name: document.getElementById("name").value,  message: document.getElementById("message").value};
+          if(mes.name !== "" && mes.message !== ""){
+            socket.emit('send message', mes);
+            console.log('Message sended')
+          }
+        }
+        
+        // document.querySelector('.send')
+        //   .addEventListener(
+        //   'click', ev => {
+        //   ev.preventDefault();
+        //   console.log('Message sended');
+        //   socket.emit('send message','MESSAGE TEXT');
+        //   });
+      </script>
+    </div>
+  </body>
+</html>
