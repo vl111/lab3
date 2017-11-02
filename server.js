@@ -8,7 +8,6 @@ var messages = [];
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html')
-  //res.send("HI");
 });
 
 http.listen(process.env.PORT, function () {
