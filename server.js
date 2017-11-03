@@ -5,7 +5,6 @@ let io = require('socket.io')(http);
 var url = require('url');
 
 var messages = [];
-//var clients = [];
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html')
@@ -18,9 +17,8 @@ http.listen(process.env.PORT, function () {
 io.on('connection', function(socket){
   console.log("CONNECTED to new client");
   for(var i = 0; i < messages.length; i++){
-    //io.emit('server message', messages[i]);
-    io.send('server message', messages[i])
-    console.log(messages[i]);
+    socket.emit('server message', messages[i]);
+    console.log(messages[i] + socket.id);
   }
   
   socket.on('disconnect', function(data){
