@@ -20,25 +20,35 @@
 # Input Line History (newest to oldest):
 
 # Registers:
-""1	LINE	0
+"1	LINE	0
 	>>>>>>> Checkpoint
 "2	LINE	0
 	<<<<<<< 421aef5ee99ac5ef1acac0c5f2ca5727a2d620d5
 	    io.local.emit('server message', messages[i]);
 	=======
+""-	CHAR	0
+	}
 
 # File marks:
-'0  1  0  ~/server.js
+'0  1  0  /usr/share/vim/vim74/doc/help.txt
 '1  21  4  ~/server.js
+'2  21  4  ~/server.js
 
 # Jumplist (newest first):
+-'  1  0  /usr/share/vim/vim74/doc/help.txt
+-'  3  3  /usr/share/vim/vim74/doc/help.txt
 -'  1  0  ~/server.js
 -'  21  4  ~/server.js
 
 # History of marks within files (newest to oldest):
 
 > ~/server.js
-	"	1	0
-	.	23	0
+	"	33	0
+	^	33	18
+	.	33	0
 	+	21	0
 	+	23	0
+	+	33	0
+
+> /usr/share/vim/vim74/doc/help.txt
+	"	1	0
