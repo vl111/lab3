@@ -8,6 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:q!
 :wq
 
 # Search String History (newest to oldest):
@@ -27,16 +28,17 @@
 	=======
 
 # File marks:
-'0  21  4  ~/server.js
+'0  1  0  ~/server.js
+'1  21  4  ~/server.js
 
 # Jumplist (newest first):
--'  21  4  ~/server.js
 -'  1  0  ~/server.js
+-'  21  4  ~/server.js
 
 # History of marks within files (newest to oldest):
 
 > ~/server.js
-	"	21	4
+	"	1	0
 	.	23	0
 	+	21	0
 	+	23	0
