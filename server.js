@@ -17,7 +17,7 @@ http.listen(process.env.PORT, function () {
 io.on('connection', function(socket){
   console.log("CONNECTED to new client");
   for(var i = 0; i < messages.length; i++){
-    io.emit('server message', messages[i]);
+    io.local.emit('server message', messages[i]);
     console.log(messages[i]);
   }
   
