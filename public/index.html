@@ -69,7 +69,7 @@
           
           var str = `<li> <b>${message.name}</b>: ${message.message}</li>`
 
-          document.getElementById('messagesList').innerHTML = document.getElementById('messagesList').innerHTML + str;
+          document.getElementById('messagesList').innerHTML = str + document.getElementById('messagesList').innerHTML;
         }
         
         // document.querySelector('.send')
