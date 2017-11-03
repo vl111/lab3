@@ -13,7 +13,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "nodemon": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "socket.io-redis": "*"
   },
   "engines": {
     "node": "8.x"
